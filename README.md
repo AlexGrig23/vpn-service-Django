@@ -12,7 +12,7 @@ the visual part is implemented using Bootstrap templates
 **1. Clone the repository:**
 
    ```shell
-   git clone https://github.com/AlexGrig23/vpn_ser.git
+   git clone https://github.com/AlexGrig23/vpn-service-Django.git
    ```
 
   Create virtual env.
