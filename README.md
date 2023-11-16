@@ -15,6 +15,10 @@ the visual part is implemented using Bootstrap templates
    git clone https://github.com/AlexGrig23/vpn-service-Django.git
    ```
 
+   ```shell
+   cd vpn_ser
+   ```
+
   Create virtual env.
 
    ```shell
@@ -24,7 +28,7 @@ the visual part is implemented using Bootstrap templates
 **2. Create a `.env` file based on the `.env.example` file:**
 
    ```shell
-   cd vnv_test
+   cd vpn_service
    ```
 
    ```shell
@@ -50,7 +54,7 @@ the visual part is implemented using Bootstrap templates
    pip install -r requirements.txt
    ```
 **5 You also need to create a PostgreSQL database and enter the credentials in the .env file.
- Additionally, you should update the 'HOST' in the Settings file (vnv_test/settings.py) to match your configuration.**
+ Additionally, you should update the 'HOST' in the Settings file (vpn_service/settings.py) to match your configuration.**
 
   ```shell
    cd vnv_test (root)
