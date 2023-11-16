@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Internal Page for {{ user_site_name }}</h1>
+  <p>Original Routes: {{ original_routes }}</p>
+
+  <button onclick="changeUrl('route1')">Go to Route 1</button>
+  <button onclick="changeUrl('route2')">Go to Route 2</button>
+  <button onclick="changeUrl('route3')">Go to Route 3</button>
+
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    function changeUrl(route) {
+      var internalRoute = `/site_proxy/external_site_proxy/{{ user_site_name }}/${route}`;
+      window.location.href = internalRoute;
+    }
+  </script>
+{% endblock %}

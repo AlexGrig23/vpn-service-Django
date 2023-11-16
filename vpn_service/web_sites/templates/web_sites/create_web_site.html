@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="text-center">CREATE WEB SITE</h2>
+    <form method="post" action="{% url 'web_sites:create_web_site' %}" class="text-center">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-outline-warning text-secondary border-secondary">Create</button>
+    <a href="{% url 'users:dashboard' %}" class="btn btn-outline-warning text-secondary border-secondary">Cancel</a>
+</form>
+
+{% endblock %}

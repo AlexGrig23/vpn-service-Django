@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 class="text-center">WEB SITE DETAILS</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">Web-Site</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center">{{ web_site.title }} - {{ web_site.url }}</td>
+        <td class="text-center">
+
+          <button class="btn btn-outline-primary text-secondary border-secondary" onclick="connectToSite('{{ web_site.title }}', '{{ web_site.url }}')">Connect</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div class="content-block">
+
+    <div id="siteContent"></div>
+  </div>
+
+<script>
+  function connectToSite(userSiteName, originalRoutes) {
+    window.location.href = `/site_proxy/external_site_proxy/${userSiteName}/${originalRoutes}/`;
+  }
+</script>
+{% endblock %}

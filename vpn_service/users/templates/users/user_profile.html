@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="text-center">USER PROFILE</h2>
+<p><strong>Username:</strong> {{ user_profile.user.username }}</p>
+<p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+<p><strong>Bio:</strong> {{ user_profile.bio }}</p>
+
+<!-- Добавляем кнопку для редактирования профиля -->
+<div class="text-center">
+<a href="{% url 'users:update' %}" class="btn btn-primary">Edit Profile</a>
+</div>
+{% endblock %}

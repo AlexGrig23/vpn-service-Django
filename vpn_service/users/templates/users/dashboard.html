@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  .nav-pills .nav-link {
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-pills .nav-link:hover, .nav-pills .nav-link.active {
+    background-color: #e2e8f0; /* Add the background color you want when hovering or when active */
+  }
+</style>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"></a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li>
+            <a href="{% url 'web_sites:statistic' %}" class="nav-link link-body-emphasis {% if request.path == '/web_sites/statistic/' %}active{% endif %}">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              Statistic
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'web_sites:create_web_site' %}" class="nav-link link-body-emphasis {% if request.path == '/web_sites/create_web_site/' %}active{% endif %}">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              Create site
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'users:user_profile' %}" class="nav-link link-body-emphasis {% if request.path == '/users/user_profile/' %}active{% endif %}">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              User profile
+            </a>
+          </li>
+        </ul>
+        <hr>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div>
+        <h2 class="text-center">DASHBOARD</h2>
+        <p><strong>Username:</strong> {{ user_profile.user.username }}</p>
+        <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

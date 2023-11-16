@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="tab-pane fade show active" id="groups" role="tabpanel" aria-labelledby="groups-tab">
+    <h2 class="text-center">WEB SITES STATISTICS</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-center">Web-Sites</th>
+                <th class="text-center">Connections</th>
+                <th class="text-center">Download Data</th>
+                <th class="text-center">Send Data</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+                  {% for site_stat in user_sites %}
+        <tr>
+            <td class="text-center">{{ site_stat.site_name }}</td>
+            <td class="text-center">{{ site_stat.clicks }}</td>
+            <td class="text-center">{{ site_stat.data_received }}</td>
+            <td class="text-center">{{ site_stat.data_sent }}</td>
+            <td class="text-center">
+    <a href="{% url 'web_sites:detail_web_site' site_id=site_stat.id %}"
+       class="btn btn-outline-primary text-secondary border-secondary">Connect</a>
+
+        </tr>
+{% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
