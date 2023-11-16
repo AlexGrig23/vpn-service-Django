@@ -15,9 +15,6 @@ the visual part is implemented using Bootstrap templates
    git clone https://github.com/AlexGrig23/vpn-service-Django.git
    ```
 
-   ```shell
-   cd vpn_ser
-   ```
 
   Create virtual env.
 
